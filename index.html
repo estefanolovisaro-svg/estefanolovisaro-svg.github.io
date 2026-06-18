@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estefano Guido - Escrita Criativa, Tradução e Copywriting</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fafafa;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        header .subtitle {
+            font-size: 1.2em;
+            opacity: 0.95;
+            margin-bottom: 20px;
+        }
+
+        header .location {
+            font-size: 0.95em;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .intro-section {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .intro-section h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        .intro-section p {
+            font-size: 1.05em;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border-left: 4px solid #667eea;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+
+        .skill-card h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .skill-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .skill-card li {
+            padding: 8px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .skill-card li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .portfolio-section {
+            margin: 60px 0;
+        }
+
+        .portfolio-section h2 {
+            color: #333;
+            font-size: 2em;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .project {
+            background: white;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .project h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+
+        .project-type {
+            display: inline-block;
+            background: #f0f0f0;
+            color: #667eea;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .project p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .example-box {
+            background: #f8f9fa;
+            padding: 20px;
+            border-left: 3px solid #764ba2;
+            margin: 15px 0;
+            font-style: italic;
+            color: #555;
+            border-radius: 4px;
+        }
+
+        .example-label {
+            font-weight: 600;
+            color: #333;
+            font-style: normal;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .translation-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 15px 0;
+        }
+
+        .translation-box {
+            padding: 15px;
+            border-radius: 4px;
+            background: #f8f9fa;
+        }
+
+        .translation-box h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 0.95em;
+            font-weight: 600;
+        }
+
+        .languages {
+            display: flex;
+            gap: 15px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .language {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .language-circle {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.8em;
+        }
+
+        .language-name {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .language-level {
+            color: #999;
+            font-size: 0.9em;
+        }
+
+        .values-section {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            margin: 40px 0;
+        }
+
+        .value-prop {
+            margin-bottom: 25px;
+        }
+
+        .value-prop h4 {
+            color: #667eea;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+
+        .value-prop p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
+        }
+
+        footer a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            .translation-comparison {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 20px;
+            }
+
+            .skill-card {
+                border-left-width: 3px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Estefano Guido</h1>
+        <p class="subtitle">Escrita Criativa • Tradução • Copywriting</p>
+        <p class="location">São Paulo, Brasil • Disponível Remotamente</p>
+    </header>
+
+    <div class="container">
+        <!-- Intro -->
+        <section class="intro-section">
+            <h2>Sobre</h2>
+            <p>
+                Profissional trilíngue especializado em criar textos que conectam marca, produto e emoção.
+                Com experiência real em tradução corporativa, copywriting de conversão e escrita criativa aplicada
+                a produtos digitais, combino sensibilidade para narrativa com expertise em comunicação estratégica.
+            </p>
+            <p>
+                Formado em Relações Internacionais, tenho vivência em operações LATAM e compreensão profunda
+                de mercados latinos. Minha abordagem: <strong>menos literal, mais humana</strong>;
+                <strong>menos genérico, mais atmosférico</strong>.
+            </p>
+        </section>
+
+        <!-- Skills Grid -->
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3>📝 Escrita Criativa</h3>
+                <ul>
+                    <li>Narrativa de marca e produto</li>
+                    <li>Copy com atmosfera e textura</li>
+                    <li>Conceitos e posicionamento</li>
+                    <li>Curadoria de conteúdo</li>
+                    <li>Escrita editorial sensível</li>
+                </ul>
+            </div>
+
+            <div class="skill-card">
+                <h3>🌍 Tradução & Localização</h3>
+                <ul>
+                    <li>PT ↔ ES com adaptação cultural</li>
+                    <li>Localização corporativa</li>
+                    <li>Tradução sensível (não literal)</li>
+                    <li>Operações LATAM</li>
+                    <li>Material institucional</li>
+                </ul>
+            </div>
+
+            <div class="skill-card">
+                <h3>💬 Copywriting</h3>
+                <ul>
+                    <li>E-mail de conversão e retenção</li>
+                    <li>WhatsApp e atendimento CX</li>
+                    <li>Landing pages e CTAs</li>
+                    <li>Onboarding e microcopy</li>
+                    <li>Branding e posicionamento</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Idiomas -->
+        <section class="values-section">
+            <h2 style="color: #667eea; margin-bottom: 25px;">Idiomas</h2>
+            <div class="languages">
+                <div class="language">
+                    <div class="language-circle">🇧🇷</div>
+                    <div>
+                        <div class="language-name">Português</div>
+                        <div class="language-level">Nativo</div>
+                    </div>
+                </div>
+                <div class="language">
+                    <div class="language-circle">🇪🇸</div>
+                    <div>
+                        <div class="language-name">Espanhol</div>
+                        <div class="language-level">Avançado</div>
+                    </div>
+                </div>
+                <div class="language">
+                    <div class="language-circle">🇺🇸</div>
+                    <div>
+                        <div class="language-name">Inglês</div>
+                        <div class="language-level">Intermediário</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tradução & Localização -->
+        <section class="portfolio-section">
+            <h2>Tradução & Localização</h2>
+
+            <div class="project">
+                <h3>Experiência em Tradução Corporativa B2B</h3>
+                <span class="project-type">Tradução + Localização</span>
+                <p><strong>LG Electronics:</strong> Tradução de materiais institucionais — newsletters corporativas
+                e especificações técnicas de linhas de produtos LED B2B para operações LATAM.</p>
+
+                <p><strong>Abordagem:</strong> Não faço tradução literal. Priorizo sensibilidade ao contexto
+                latino-americano, clareza técnica sem soar robótica, e tom de marca consistente. Essencial para
+                materiais B2B que precisam manter credibilidade técnica enquanto conectam com públicos regionais.</p>
+            </div>
+
+        </section>
+
+        <!-- Copywriting -->
+        <section class="portfolio-section">
+            <h2>Copywriting</h2>
+
+            <div class="project">
+                <h3>E-mail de Retenção — Setor Financeiro</h3>
+                <span class="project-type">Copywriting (Empiricus)</span>
+                <p>Antes do cancelamento: oportunidade para esclarecer dúvidas e reconectar o cliente com valor real.</p>
+
+                <div class="example-box">
+                    <span class="example-label">📧 Assunto:</span>
+                    Antes de cancelar, vale revisar isso com calma
+                </div>
+
+                <div class="example-box">
+                    <span class="example-label">📝 Corpo:</span>
+                    Vi que você está pensando em cancelar sua assinatura e queria te ajudar a tomar essa decisão
+                    com mais clareza. Às vezes, o problema não é o conteúdo em si, mas a forma como ele está
+                    sendo usado.
+                </div>
+            </div>
+
+            <div class="project">
+                <h3>E-mail de Onboarding — Novo Assinante</h3>
+                <span class="project-type">Copywriting (Empiricus)</span>
+                <p>Primeiros passos estratégicos para garantir que o novo cliente sinta valor desde o primeiro dia.</p>
+
+                <div class="example-box">
+                    <span class="example-label">📧 Assunto:</span>
+                    Seu acesso está liberado. Comece por aqui.
+                </div>
+
+                <div class="example-box">
+                    <span class="example-label">📝 Corpo:</span>
+                    Seu acesso já está ativo. Para aproveitar melhor a assinatura desde o primeiro dia,
+                    recomendo começar por estes três passos antes de qualquer tomada de decisão.
+                </div>
+            </div>
+
+            <div class="project">
+                <h3>WhatsApp de Atendimento — Tom Humano</h3>
+                <span class="project-type">Microcopy CX</span>
+                <p>Resolução de problemas com clareza, empatia e sem soar robótico. Essencial para manter
+                relacionamento genuíno em canais rápidos.</p>
+
+                <div class="example-box">
+                    <span class="example-label">💬 Mensagem:</span>
+                    Oi, [Nome]. Entendi seu ponto. Vou verificar isso com cuidado para te passar uma resposta
+                    correta, sem chute. Enquanto isso, já adianto que o mais importante é confirmar duas coisas:
+                    o status da sua assinatura e se o acesso está vinculado ao mesmo e-mail usado na compra.
+                    Me manda, por favor, o e-mail cadastrado ou o CPF do titular que eu sigo daqui.
+                </div>
+            </div>
+        </section>
+
+        <!-- Escrita Criativa - Projeto em Desenvolvimento -->
+        <section class="portfolio-section">
+            <h2>Escrita Criativa — Projeto Sierra (Em Desenvolvimento)</h2>
+
+            <div class="project">
+                <h3>Sistema de Roteiros Atmosféricos para América Latina</h3>
+                <span class="project-type">Conceito & Case Study</span>
+
+                <p><strong>Contexto:</strong> Sierra é um projeto pessoal em desenvolvimento — um sistema de curadoria
+                de viagens baseado em atmosfera emocional, não em listas turísticas convencionais. O conceito transforma
+                preferências de viagem (romântico, contemplativo, boêmio, artístico) em roteiros personalizados com
+                lugares, ritmo e trilha sonora.</p>
+
+                <p>Este case study demonstra capacidade de criar conceito de marca, estruturar narrativa de produto,
+                desenvolver copy estratégico e trabalhar em múltiplos idiomas de forma coerente.</p>
+
+                <h4 style="color: #667eea; margin-top: 20px; margin-bottom: 10px;">Conceito Criativo</h4>
+                <div class="example-box">
+                    <strong>Manifesto da Marca:</strong><br><br>
+                    "Viajar não é apenas sair de um lugar e chegar em outro. É mudar de ritmo. É escolher
+                    o tipo de memória que você quer carregar depois."
+                </div>
+
+                <h4 style="color: #667eea; margin-top: 20px; margin-bottom: 10px;">Posicionamento</h4>
+                <p>Roteiros personalizados por atmosfera, com curadoria cultural, mapa e trilha sonora.
+                Voz: sensível, prática e visual. <strong>Menos lista turística, mais leitura emocional do destino.</strong></p>
+
+                <h4 style="color: #667eea; margin-top: 20px; margin-bottom: 10px;">Amostras de Copy</h4>
+                <div class="example-box">
+                    "Viagens curadas para sentir a alma da América Latina."
+                </div>
+                <div class="example-box">
+                    "Roteiros atmosféricos que conectam você a lugares, culturas e momentos inesquecíveis."
+                </div>
+                <div class="example-box">
+                    "Sinta o destino antes de partir. Preencha o formulário e receba uma primeira leitura
+                    personalizada, com diagnóstico, mini roteiro de 1 dia, 3 lugares sugeridos e playlist Sierra."
+                </div>
+
+                <h4 style="color: #667eea; margin-top: 20px; margin-bottom: 10px;">Princípio Editorial</h4>
+                <div class="example-box">
+                    <strong>Menos "veja tudo"; mais "sinta melhor onde você está"</strong>
+                </div>
+
+                <h4 style="color: #667eea; margin-top: 20px; margin-bottom: 10px;">Destinos Curados</h4>
+                <ul style="margin-left: 20px;">
+                    <li><strong>Cusco</strong> — Contemplativo, cultural, espiritual</li>
+                    <li><strong>Lima</strong> — Gastronômico, cultural, fotográfico</li>
+                    <li><strong>Arequipa</strong> — Romântico, contemplativo, cultural</li>
+                    <li><strong>Rio de Janeiro</strong> — Fotográfico, musical, aventura</li>
+                    <li><strong>Campos do Jordão</strong> — Romântico, introspectivo, natureza</li>
+                    <li><strong>Ouro Preto</strong> — Cultural, fotográfico, contemplativo</li>
+                </ul>
+
+                <h4 style="color: #667eea; margin-top: 20px; margin-bottom: 10px;">Estrutura de Entrega</h4>
+                <p>Prévia Atmosférica contendo:</p>
+                <ul style="margin-left: 20px;">
+                    <li>Diagnóstico de atmosfera</li>
+                    <li>Mini roteiro de 1 dia</li>
+                    <li>3 lugares sugeridos</li>
+                    <li>Playlist Sierra</li>
+                    <li>Disponível em PT, ES e EN</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Proposta de Valor -->
+        <section class="values-section">
+            <h2 style="color: #667eea; margin-bottom: 25px;">Proposta de Valor</h2>
+
+            <div class="value-prop">
+                <h4>🎯 Tradução com Adaptação Cultural</h4>
+                <p>Não faço tradução literal. Adapto ao contexto latino-americano, mantendo sentimento
+                e intenção original. Experiência real em operações LATAM (LG Electronics).</p>
+            </div>
+
+            <div class="value-prop">
+                <h4>✨ Escrita com Atmosfera</h4>
+                <p>Textos que criam imagem, sentimento e identidade de marca. Menos "veja tudo",
+                mais "sinta melhor". Adequado para produtos, experiências e narrativas sensíveis.</p>
+            </div>
+
+            <div class="value-prop">
+                <h4>📊 Copy com Base em Cliente Real</h4>
+                <p>Experiência prática em CX, WhatsApp, e-mail e CRM (Empiricus). Copys que conversam,
+                persuadem e mantêm relacionamento genuíno.</p>
+            </div>
+
+            <div class="value-prop">
+                <h4>🌎 Vivência LATAM</h4>
+                <p>Não apenas conhecimento teórico. Operação regional na LG Electronics, compreensão
+                de nuances de Peru, Brasil, Argentina, Chile e mercados latinos.</p>
+            </div>
+        </section>
+
+        <!-- Contato -->
+        <section class="intro-section">
+            <h2>Entre em Contato</h2>
+            <p style="font-size: 1.1em;">
+                <strong>E-mail:</strong>
+                <a href="mailto:estefanolovisaro@gmail.com" style="color: #667eea; text-decoration: none;">
+                    estefanolovisaro@gmail.com
+                </a>
+            </p>
+            <p style="font-size: 1.1em;">
+                <strong>WhatsApp/Tel:</strong> +55 11 98994-1028
+            </p>
+            <p style="font-size: 1.1em;">
+                <strong>Localização:</strong> São Paulo, Brasil • Disponível para trabalho remoto
+            </p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Estefano Guido. Escrita Criativa, Tradução e Copywriting.</p>
+        <p style="margin-top: 10px; font-size: 0.9em;">
+            <strong>Filosofia:</strong> Menos literal, mais humana. Menos genérico, mais atmosférico.
+        </p>
+    </footer>
+</body>
+</html>
