@@ -1,0 +1,123 @@
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @keyframes floatBounce {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-8px); }
+      }
+      @keyframes sway {
+        0%, 100% { transform: rotate(0deg); }
+        25% { transform: rotate(1deg); }
+        75% { transform: rotate(-1deg); }
+      }
+      @keyframes blink {
+        0%, 90%, 100% { opacity: 1; }
+        95% { opacity: 0; }
+      }
+      .fruit-container {
+        animation: floatBounce 3s ease-in-out infinite;
+      }
+      .fruit-body {
+        animation: sway 4s ease-in-out infinite;
+        transform-origin: center 180px;
+      }
+      .left-eye {
+        animation: blink 4s ease-in-out infinite;
+      }
+      .right-eye {
+        animation: blink 4s ease-in-out infinite;
+      }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="512" height="512" fill="transparent"/>
+
+  <!-- Main fruit container with float animation -->
+  <g class="fruit-container">
+    <!-- Main fruit body (simplified, menos kawaii) -->
+    <g class="fruit-body">
+      <!-- Outer shape - fruta mais angular/séria -->
+      <defs>
+        <linearGradient id="fruitGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#FF4D6D;stop-opacity:1" />
+          <stop offset="50%" style="stop-color:#E63946;stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#A4161A;stop-opacity:1" />
+        </linearGradient>
+        <linearGradient id="leafGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#9BC742;stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#6FA028;stop-opacity:1" />
+        </linearGradient>
+      </defs>
+
+      <!-- Leaves/petals at the top -->
+      <g id="leaves">
+        <!-- Left top leaf -->
+        <ellipse cx="160" cy="140" rx="35" ry="55" fill="url(#leafGradient)" opacity="0.95"/>
+        <!-- Right top leaf -->
+        <ellipse cx="280" cy="140" rx="35" ry="55" fill="url(#leafGradient)" opacity="0.95"/>
+        <!-- Left middle leaf -->
+        <ellipse cx="140" cy="200" rx="32" ry="52" fill="url(#leafGradient)" opacity="0.9" transform="rotate(-30 140 200)"/>
+        <!-- Right middle leaf -->
+        <ellipse cx="300" cy="200" rx="32" ry="52" fill="url(#leafGradient)" opacity="0.9" transform="rotate(30 300 200)"/>
+        <!-- Stem -->
+        <rect x="210" y="80" width="12" height="70" fill="#8B6F47" rx="6"/>
+      </g>
+
+      <!-- Main bell/fruit shape -->
+      <path d="M 180 150 Q 140 200 130 280 Q 125 330 170 370 Q 220 410 290 410 Q 340 410 360 380 Q 380 350 380 280 Q 375 200 320 150 Z"
+            fill="url(#fruitGradient)" stroke="none"/>
+
+      <!-- Inner highlight (menos brilho excessivo) -->
+      <ellipse cx="240" cy="220" rx="45" ry="60" fill="rgba(255,255,255,0.15)" opacity="0.6"/>
+
+      <!-- Right bottom petals/ruffles -->
+      <g id="bottom-ruffles">
+        <ellipse cx="290" cy="380" rx="28" ry="45" fill="url(#leafGradient)" opacity="0.92" transform="rotate(20 290 380)"/>
+        <ellipse cx="320" cy="400" rx="26" ry="42" fill="url(#leafGradient)" opacity="0.88" transform="rotate(40 320 400)"/>
+        <ellipse cx="350" cy="400" rx="24" ry="40" fill="url(#leafGradient)" opacity="0.85" transform="rotate(60 350 400)"/>
+      </g>
+
+      <!-- Left bottom petals/ruffles -->
+      <g id="bottom-ruffles-left">
+        <ellipse cx="160" cy="380" rx="28" ry="45" fill="url(#leafGradient)" opacity="0.92" transform="rotate(-20 160 380)"/>
+        <ellipse cx="130" cy="400" rx="26" ry="42" fill="url(#leafGradient)" opacity="0.88" transform="rotate(-40 130 400)"/>
+        <ellipse cx="100" cy="400" rx="24" ry="40" fill="url(#leafGradient)" opacity="0.85" transform="rotate(-60 100 400)"/>
+      </g>
+
+      <!-- Eyes - menos cute, mais expressivos -->
+      <!-- Left eye white -->
+      <ellipse class="left-eye" cx="210" cy="240" rx="22" ry="28" fill="white" stroke="#333" stroke-width="2"/>
+      <!-- Left pupil - não tão grande -->
+      <circle cx="215" cy="250" r="13" fill="#1a1a1a"/>
+      <!-- Left pupil highlight - mais discreto -->
+      <circle cx="218" cy="247" r="4" fill="white" opacity="0.7"/>
+
+      <!-- Right eye white -->
+      <ellipse class="right-eye" cx="290" cy="240" rx="22" ry="28" fill="white" stroke="#333" stroke-width="2"/>
+      <!-- Right pupil -->
+      <circle cx="285" cy="250" r="13" fill="#1a1a1a"/>
+      <!-- Right pupil highlight -->
+      <circle cx="282" cy="247" r="4" fill="white" opacity="0.7"/>
+
+      <!-- Eyebrows - expressão neutra/séria -->
+      <path d="M 195 225 Q 210 220 225 225" stroke="#333" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <path d="M 275 225 Q 290 220 305 225" stroke="#333" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+      <!-- Mouth - expressão neutra (sem smile kawaii) -->
+      <path d="M 230 320 Q 250 330 270 320" stroke="#333" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+      <!-- Cheeks - mínimo rubor -->
+      <circle cx="155" cy="290" r="12" fill="#FFB3BA" opacity="0.3"/>
+      <circle cx="335" cy="290" r="12" fill="#FFB3BA" opacity="0.3"/>
+    </g>
+
+    <!-- Minimal decorations - sem corações e estrelas excessivas -->
+    <!-- Single accent shine -->
+    <circle cx="420" cy="180" r="6" fill="#FFD700" opacity="0.6"/>
+    <circle cx="420" cy="180" r="3" fill="#FFF" opacity="0.8"/>
+  </g>
+
+  <!-- Shadow/depth -->
+  <ellipse cx="220" cy="450" rx="80" ry="15" fill="rgba(0,0,0,0.1)"/>
+</svg>
